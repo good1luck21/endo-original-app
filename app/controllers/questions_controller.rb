@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
     p Question.find_by(id: params[:id])
     p "================================"
      @question = Question.find_by(id: params[:id])
+     @answer = Answer.new
   end
 
 

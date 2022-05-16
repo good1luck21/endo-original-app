@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   post 'questions/create', to: 'questions#create', as: 'create_question'
   get  'questions/:id',    to: 'questions#show',   as: 'question'
   
-   
+
   get  'answers/new',    to: 'answers#new',    as: 'answer_new'
-  post 'answers/create', to: 'answers#create', as: 'answer_create'
+  post ':question_id/answers/create', to: 'answers#create', as: 'answer_create'
   get  'answers/:id',    to: 'answers#show',   as: 'answer'
  
  

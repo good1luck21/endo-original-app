@@ -5,8 +5,16 @@
 
 
 <h1>Answer</h1>
+<h2>回答一覧</h2>
+<% @question.answers.each do |answer| %>
+  回答No.<%= answer.id %>: <%= answer.content %><br>
+<% end %>
 
-<%= link_to "解答", answer_new_path %> 
+<h2>回答する</h2>
+<%= form_for @answer, url: answer_create_path(@question.id) do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit "回答する" %>
+<% end %>
 
 
 

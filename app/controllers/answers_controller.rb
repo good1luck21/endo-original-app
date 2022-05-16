@@ -12,12 +12,14 @@ class AnswersController < ApplicationController
 
 
   def create
-    user = User.find(session[:user_id])
-    answer = user.answers.build(answer_params)
-    if answer.save
-      redirect_to  questions_path
-    else
-      render :new
+    p "================================"
+    p params
+    p "================================"
+    @question = Question.find_by(id: params[:question_id])
+    @answer = @question.answers.build(answer_params)
+    @answer.user_id = session[:user_id]
+    if @answer.save
+      redirect_to question_path(@question)
     end
   end
 
