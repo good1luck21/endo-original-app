@@ -1,0 +1,9 @@
+<h1>Question#new</h1>
+
+<%= form_for @question, url: create_question_path do |f| %>
+
+   title:<input type="text" name="question[title]">
+   content:<input type="text" name="question[content]">
+   
+<%= f.submit "登録" %>
+<% end %>

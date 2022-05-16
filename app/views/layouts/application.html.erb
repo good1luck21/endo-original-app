@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NewApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+        <header class="header">
+            <h1 class="header-logo">Program</h1>
+            <ul>
+         <% if session[:user_id] %>
+            <li class="header-nav">
+                <a><%= link_to "Home", root_path %></a>
+            </li>    
+            <li class="header-nav">
+                <%= link_to "プロフィール", user_show_path %>
+            </li>    
+            <li class="header-nav">
+                <%= link_to "ログアウト", logout_path, method: :delete %>
+            </li>
+        <% else %>
+            <li class="header-nav">
+                <%= link_to '会員登録', user_new_path %>
+            </li>
+            <li class="header-nav">
+                <%= link_to 'ログイン', login_path %>
+            </li>
+        <% end %>
+        </ul>
+    </header>
+
+    <%= yield %>
+    
+     <footer>
+        <div class="footer">
+            <div class="footer-list">Quset</div>
+            <div class="footer-list">Question</div>
+            <div class="footer-list">Post</div>
+        </div>
+    </footer>
+    
+  </body>
+</html>

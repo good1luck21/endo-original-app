@@ -1,0 +1,10 @@
+<h1>Answer#new</h1>
+
+
+<%= form_for @answer, url: answer_create_path do |f| %>
+
+content:<input type="text" name="answer[content]">
+
+<%= f.submit %>
+
+<% end %>

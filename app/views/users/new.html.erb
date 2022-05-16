@@ -1,0 +1,20 @@
+<%= form_for @user, url: user_create_path do |f| %>
+      
+<div class="login"> 
+
+    <div class="login_form_top">
+        <h1>会員登録</h1>
+        <p>Name、Email、Passwordをご入力の上、「会員登録」ボタンをクリックしてください。</p>
+    </div>
+    <div class="login_form_btm">
+        <input type="text" name="user[name]" placeholder="Nameを入力してください"><br>
+        <input type="text" name="user[email]" placeholder="Emailを入力してください"><br>
+        <input type="password" name="user[password]" placeholder="Passwordを入力してください">
+    </div>
+    
+ 　<div class="login_form_rast">
+    <a><%= f.submit  "会員登録" %></a>
+    <div>
+        
+    </div>
+<% end %>

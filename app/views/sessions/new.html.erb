@@ -1,0 +1,18 @@
+<%= form_for "sessions", url: login_create_path do |f| %>
+
+<div class="sessions">
+        
+    <div class="sessions_login">    
+         <h1>ログイン</h1>
+    </div>
+    <div class="sessions_login_top">
+        <input type="text" name="sessions[email]" placeholder="Emailを入力してください"><br>
+        <input type="password" name="sessions[password]" placeholder="Passwordを入力してください">
+    </div>
+
+    <div class="sessions_login_rast">
+        <a><%= f.submit  "ログイン" %></a>
+    <div>
+</div>
+
+<% end %>
